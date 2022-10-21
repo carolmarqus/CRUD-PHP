@@ -42,8 +42,6 @@ if(isset($_GET['id'])){
             $genero = $row['genero'];
             $id = $row['id'];
         }
-    }
-}
     ?>
 
     <h2>Formulario de Atualização</h2>
@@ -67,12 +65,17 @@ if(isset($_GET['id'])){
             <input type="radio" name="genero" value="Masculino"
                 <?php if($genero == 'Masculino'){echo "checked";} ?>> Masculino
             <input type="radio" name="genero" value="Feminino"
-                <?php if($genero == 'Feminino'){echo "checked";} ?>>> Feminino
+                <?php if($genero == 'Feminino'){echo "checked";} ?>> Feminino
             <input type="radio" name="genero" value="Outros" 
-                <?php if($genero == 'Outros'){echo "checked";} ?>>> Outros
+                <?php if($genero == 'Outros'){echo "checked";} ?>> Outros
             <br>
             <br>
             <input type="submit" name="update" value="update">
         </fieldset>
     </form>
-
+ <?php
+}else{
+    header('Location:consultar.php');
+}
+    }
+    ?>
